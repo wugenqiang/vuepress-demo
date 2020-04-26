@@ -1,49 +1,118 @@
-module.exports = {
-    title: 'VuePress 文档 demo',
-    description: 'Document library',
-    head: [
-        ['link', { rel: 'icon', href: `https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425141925.ico` }],
-    ],
-    themeConfig: {
-        nav: [
-            {text: '主页', link: '/'},
-            {text: '前端规范', link: '/frontEnd/'},
-            {text: '开发环境', link: '/development/'},
-            {text: '学习文档', link: '/notes/'},
-            // 下拉列表的配置
-            {
-                text: 'Languages',
-                items: [
-                    {text: 'Chinese', link: '/language/chinese'},
-                    {text: 'English', link: '/language/English'}
-                ]
-            }
-        ],
-        sidebar: {
-            '/note': [
-                {
-                    title: '前端',
-                    collapsable: true,
-                    children: [
-                        '/notes/frontEnd/VueJS组件编码规范',
-                        '/notes/frontEnd/vue-cli脚手架快速搭建项目',
-                        '/notes/frontEnd/深入理解vue中的slot与slot-scope',
-                        '/notes/frontEnd/webpack入门',
-                        '/notes/frontEnd/PWA介绍及快速上手搭建一个PWA应用',
-                    ]
-                },
-                {
-                    title: '后端',
-                    collapsable: true,
-                    children: [
-                        'notes/backEnd/nginx入门',
-                        'notes/backEnd/CentOS如何挂载磁盘',
-                    ]
-                },
-            ]
-        },
-
-        base: '/vuepress-demo/',
+const fs = require('fs')
+// 获取该文件夹下的所有文件名
+const getFileNames = (parentFileName) => {
+  const results = []
+  const files = fs.readdirSync(`./docs${parentFileName}`)
+  files.forEach((val) => {
+    if ('README.md'.includes(val)) {
+      // results.push('')
+    } else {
+      results.push(val)
     }
+  })
+  return results
 }
 
+module.exports = {
+  title: '去冲浪鸭',
+  description: '耶耶耶耶耶✌️',
+  base: "/notes/",
+  head: [
+    ['link', { rel: 'icon', href: `/touxiang.png` }]
+  ],
+  plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'UA-144045995-2'
+      }
+    ],
+    '@vuepress/back-to-top'
+  ],
+  themeConfig: {
+    displayAllHeaders: false, // 默认值：false
+
+    lastUpdated: true,
+
+    repo: 'fyz1994/notes',
+    editLinks: true,
+    docsDir: 'docs',
+
+    smoothScroll: true,//页面滚动
+
+    nav: [
+      {
+        text: '知识库',
+        items: [
+          { text: 'JavaScript', link: '/knowledge/javascript/' },
+          { text: 'Graphql', link: '/knowledge/graphql/' },
+          { text: 'React', link: '/knowledge/react/' },
+          { text: '网络请求', link: '/knowledge/http/' },
+        ]
+      },
+      {
+        text: '工具', link: '/tool/tools/',
+      },
+      {
+        text: '阅读',
+        items: [
+          { text: '优质文章记录', link: '/essay/docs/' },
+          { text: '读书笔记', link: '/essay/notes/' },
+        ]
+      },
+      {
+        text: 'Me',
+        items: [
+          { text: '掘金', link: 'https://juejin.im/user/5b446be0f265da0f793a56e4/posts' },
+          { text: 'NPM', link: 'https://www.npmjs.com/settings/yizhen.fan/packages' },
+          { text: 'GitHub', link: 'https://github.com/fyz1994' }
+        ]
+      },
+    ],
+    sidebar: {
+      '/knowledge/javascript/': [
+        {
+          title: 'javascript',
+          children: getFileNames('/knowledge/javascript/')
+        }
+      ],
+      '/knowledge/graphql/': [
+        {
+          title: 'Graphql',
+          children: getFileNames('/knowledge/graphql/')
+        }
+      ],
+      '/knowledge/react/': [
+        {
+          title: 'React 学习记录',
+          children: getFileNames('/knowledge/react/')
+        }
+      ],
+      '/knowledge/http/': [
+        {
+          title: '网络请求',
+          children: getFileNames('/knowledge/http/')
+        }
+      ],
+      '/tool/tools/': [
+        {
+          title: '工具',
+          children: getFileNames('/tool/tools/')
+        }
+      ],
+      '/essay/docs/': [
+        {
+          title: '优质文章记录',
+          children: getFileNames('/essay/docs/')
+        }
+      ],
+      '/essay/notes/': [
+        {
+          title: '读书笔记',
+          children: getFileNames('/essay/notes/')
+        }
+      ],
+    },
+    sidebarDepth: 2
+  }
+}
