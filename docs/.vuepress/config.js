@@ -45,7 +45,7 @@ module.exports = {
         text: '知识库',
         items: [
           { text: '技术笔记', link: 'https://wugenqiang.github.io/CS-Notes/#/' },
-          { text: '算法笔记', link: 'https://wugenqiang.github.io/algorithm-data-structure/#/' }
+          { text: '算法笔记', link: 'https://wugenqiang.github.io/algorithm-data-structure/#/' },
         ]
       },
       {
@@ -61,13 +61,6 @@ module.exports = {
       },
     ],
     sidebar: {
-
-      '/tool': [
-        {
-          title: '首页',
-          children: getFileNames('/tool')
-        }
-      ],
 
       '/tool/tools/': [
         {
