@@ -62,6 +62,13 @@ module.exports = {
     ],
     sidebar: {
 
+      '/': [
+        {
+          title: '首页',
+          children: getFileNames('/')
+        }
+      ],
+
       '/tool/tools/': [
         {
           title: '工具',
