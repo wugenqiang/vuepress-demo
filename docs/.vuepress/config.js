@@ -67,6 +67,12 @@ module.exports = {
           title: '工具',
           children: getFileNames('/tool/tools/')
         }
+      ],
+      '/guide/': [
+        {
+          title: '工具',
+          children: getFileNames('/guide/')
+        }
       ]
     },
     sidebarDepth: 2
