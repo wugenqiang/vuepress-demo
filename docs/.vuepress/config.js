@@ -62,10 +62,10 @@ module.exports = {
     ],
     sidebar: {
 
-      '/': [
+      '/tool': [
         {
           title: '首页',
-          children: getFileNames('/')
+          children: getFileNames('/tool')
         }
       ],
 
