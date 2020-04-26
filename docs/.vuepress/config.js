@@ -14,11 +14,11 @@ const getFileNames = (parentFileName) => {
 }
 
 module.exports = {
-  title: '去冲浪鸭',
+  title: 'VuePress Demo',
   description: '耶耶耶耶耶✌️',
-  base: "/notes/",
+  base: "/vuepress-demo/",
   head: [
-    ['link', { rel: 'icon', href: `/touxiang.png` }]
+    ['link', { rel: 'icon', href: `https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425141925.ico` }]
   ],
   plugins: [
     [
@@ -34,7 +34,7 @@ module.exports = {
 
     lastUpdated: true,
 
-    repo: 'fyz1994/notes',
+    repo: 'wugenqiang/vuepress-demo',
     editLinks: true,
     docsDir: 'docs',
 
@@ -65,7 +65,7 @@ module.exports = {
         items: [
           { text: '掘金', link: 'https://juejin.im/user/5b446be0f265da0f793a56e4/posts' },
           { text: 'NPM', link: 'https://www.npmjs.com/settings/yizhen.fan/packages' },
-          { text: 'GitHub', link: 'https://github.com/fyz1994' }
+          { text: 'GitHub', link: 'https://github.com/wugenqiang' }
         ]
       },
     ],
