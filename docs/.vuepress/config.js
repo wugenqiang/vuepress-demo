@@ -44,74 +44,30 @@ module.exports = {
       {
         text: '知识库',
         items: [
-          { text: 'JavaScript', link: '/knowledge/javascript/' },
-          { text: 'Graphql', link: '/knowledge/graphql/' },
-          { text: 'React', link: '/knowledge/react/' },
-          { text: '网络请求', link: '/knowledge/http/' },
+          { text: '技术笔记', link: 'https://wugenqiang.github.io/CS-Notes/#/' },
+          { text: '算法笔记', link: 'https://wugenqiang.github.io/algorithm-data-structure/#/' }
         ]
       },
       {
         text: '工具', link: '/tool/tools/',
       },
+
       {
-        text: '阅读',
+        text: '博客',
         items: [
-          { text: '优质文章记录', link: '/essay/docs/' },
-          { text: '读书笔记', link: '/essay/notes/' },
-        ]
-      },
-      {
-        text: 'Me',
-        items: [
-          { text: '掘金', link: 'https://juejin.im/user/5b446be0f265da0f793a56e4/posts' },
-          { text: 'NPM', link: 'https://www.npmjs.com/settings/yizhen.fan/packages' },
-          { text: 'GitHub', link: 'https://github.com/wugenqiang' }
+          { text: 'CSDN', link: 'https://blog.csdn.net/wugenqiang' },
+          { text: 'GitHub', link: 'https://wugenqiang.github.io/' }
         ]
       },
     ],
     sidebar: {
-      '/knowledge/javascript/': [
-        {
-          title: 'javascript',
-          children: getFileNames('/knowledge/javascript/')
-        }
-      ],
-      '/knowledge/graphql/': [
-        {
-          title: 'Graphql',
-          children: getFileNames('/knowledge/graphql/')
-        }
-      ],
-      '/knowledge/react/': [
-        {
-          title: 'React 学习记录',
-          children: getFileNames('/knowledge/react/')
-        }
-      ],
-      '/knowledge/http/': [
-        {
-          title: '网络请求',
-          children: getFileNames('/knowledge/http/')
-        }
-      ],
+
       '/tool/tools/': [
         {
           title: '工具',
           children: getFileNames('/tool/tools/')
         }
-      ],
-      '/essay/docs/': [
-        {
-          title: '优质文章记录',
-          children: getFileNames('/essay/docs/')
-        }
-      ],
-      '/essay/notes/': [
-        {
-          title: '读书笔记',
-          children: getFileNames('/essay/notes/')
-        }
-      ],
+      ]
     },
     sidebarDepth: 2
   }
