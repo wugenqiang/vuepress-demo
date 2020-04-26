@@ -70,7 +70,7 @@ module.exports = {
       ],
       '/guide/': [
         {
-          title: '工具',
+          title: 'VuePress 指南',
           children: getFileNames('/guide/')
         }
       ]
