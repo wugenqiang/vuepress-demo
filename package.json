@@ -6,7 +6,12 @@
   "dependencies": {
     "vuepress": "^1.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.2.0",
+    "@vuepress/plugin-google-analytics": "^1.2.0",
+    "gh-pages": "^2.1.1",
+    "vuepress": "^1.2.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vuepress dev docs",
