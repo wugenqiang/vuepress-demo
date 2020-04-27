@@ -58,7 +58,7 @@ module.exports = {
 
   ],
   markdown: {
-    lineNumbers: true // 代码块显示行号
+    lineNumbers: false // 代码块不显示行号
   },
   themeConfig: {
     displayAllHeaders: false, // 默认值：false
