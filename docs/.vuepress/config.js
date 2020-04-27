@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 // 获取该文件夹下的所有文件名
 const getFileNames = (parentFileName) => {
   const results = []
@@ -121,7 +122,8 @@ module.exports = {
         }
       ]
     },
-    sidebarDepth: 2
+    sidebarDepth: 2,
+    palette: path.resolve(__dirname, 'palette.styl'),//样式修改
 
   }
 }
