@@ -20,7 +20,7 @@
   "author": "WuGenQiang",
   "license": "ISC",
   "dependencies": {
-    "leancloud-storage": "^4.5.3",
+    "busuanzi.pure.js": "^1.0.3",
     "vuepress-plugin-comment": "^0.7.3"
   }
 }
