@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /touxiang.png
+heroImage: /images/touxiang.png
 actionText: 去看看 →
 actionLink: /guide/VuePress创建文档网站
 features:
