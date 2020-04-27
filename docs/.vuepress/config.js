@@ -15,7 +15,7 @@ const getFileNames = (parentFileName) => {
 
 module.exports = {
   title: 'VuePress Demo',
-  description: '耶耶耶耶耶✌️',
+  description: '基于 VuePress 实现的文档网站小 demo',
   base: "/vuepress-demo/",
   head: [
     ['link', { rel: 'icon', href: `https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425141925.ico` }]
@@ -24,15 +24,50 @@ module.exports = {
     [
       '@vuepress/google-analytics',
       {
-        'ga': 'UA-144045995-2'
+        'ga': 'UA-164658031-1' // UA-00000000-0
       }
     ],
-    '@vuepress/back-to-top'
+    '@vuepress/back-to-top',
+    '@vuepress/medium-zoom',
+    ['@vuepress/pwa', {
+      serviceWorker: true,
+      //指向自定义组件
+      //popupComponent: 'MySWUpdatePopup',
+      updatePopup: {
+        message: "新的风暴已经出现",
+        buttonText: "盘他"
+      }
+    }],
+    [
+      'vuepress-plugin-comment',
+      {
+        choosen: 'valine',
+        // options选项中的所有参数，会传给Valine的配置
+        options: {
+          el: '#valine-vuepress-comment',
+          appId: "KIlqXsCmzBUnovnvh5ih8mk9-gzGzoHsz",
+          appKey: "e0v6zIg2NGg44PM6MVLa7voo",
+          avatar: 'monsterid',
+          //path: window.location.href,
+          placeholder: "你是我一生只会遇见一次的惊喜 ...",
+
+        }
+      }
+    ]
+
   ],
+  markdown: {
+    lineNumbers: true // 代码块显示行号
+  },
   themeConfig: {
     displayAllHeaders: false, // 默认值：false
 
-    lastUpdated: true,
+    lastUpdated: true,//更新时间 lastUpdated: 'Last Updated', // string | boolean
+
+    // 默认值是 true 。设置为 false 来禁用所有页面的 下一篇 链接
+    nextLinks: true,
+    // 默认值是 true 。设置为 false 来禁用所有页面的 上一篇 链接
+    prevLinks: true,
 
     repo: 'wugenqiang/vuepress-demo',
     editLinks: true,
@@ -40,7 +75,18 @@ module.exports = {
 
     smoothScroll: true,//页面滚动
 
+    search: true,//内置搜索
+    searchMaxSuggestions: 10,//内置搜索最大数量
+
+
+
     nav: [
+      {
+        text: '主页', link: '/',
+      },
+      {
+        text: '指南', link: '/guide/VuePress创建文档网站',
+      },
       {
         text: '知识库',
         items: [
@@ -76,5 +122,6 @@ module.exports = {
       ]
     },
     sidebarDepth: 2
+
   }
 }

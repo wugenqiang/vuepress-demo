@@ -5,7 +5,9 @@
   "main": "index.js",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.2.0",
-    "@vuepress/plugin-google-analytics": "^1.2.0",
+    "@vuepress/plugin-google-analytics": "^1.4.1",
+    "@vuepress/plugin-medium-zoom": "^1.4.1",
+    "@vuepress/plugin-pwa": "^1.4.1",
     "gh-pages": "^2.1.1",
     "vuepress": "^1.4.1"
   },
@@ -16,5 +18,9 @@
     "deploy": "npm run build && gh-pages -d docs/.vuepress/dist"
   },
   "author": "WuGenQiang",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "leancloud-storage": "^4.5.3",
+    "vuepress-plugin-comment": "^0.7.3"
+  }
 }

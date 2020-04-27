@@ -28,7 +28,7 @@ npm install -D vuepress
 
 ```sh
 # 可以使用 npm 来初始化项目,会生成 package.json
-npm init
+npm init -y
 ```
 
 然后在项目的根目录下新建一个 `docs` 文件夹，以后我们写的 `markdown` 文件都会放在 `docs` 文件夹下。
@@ -126,128 +126,7 @@ VuePress 遵循 **“约定优于配置”** 的原则，推荐的目录结构�
 
 目前我们只写了一个 `markdown` 文档，所以只有一个页面，后续我们的博客会陆续加入很多内容，肯定需要做目录分级，配置导航栏，可以看[文档里的这部分](https://vuepress.vuejs.org/zh/theme/default-theme-config.html#首页)
 
-### 配置文件
-
-如果没有任何配置，这个网站将会是非常局限的，用户也无法在你的网站上自由导航。为了更好地自定义你的网站，让我们首先在你的文档目录下创建一个 `.vuepress` 目录，所有 VuePress 相关的文件都将会被放在这里。你的项目结构可能是这样：
-
-```bash
-.
-├─ docs
-│  ├─ README.md
-│  └─ .vuepress
-│     └─ config.js
-└─ package.json
-```
-
-在  .vuepress 目录下新建一个 config.js, 他导出一个对象
-
-一些配置可以参考官方文档, 这里我配置常用及必须配置的
-
-### 网站信息
-
-```js
-module.exports = {
-    title: 'VuePress 文档 demo',
-    description: 'Document library',
-    head: [
-        ['link', { rel: 'icon', href: `https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425141925.ico` }],
-    ],
-}
-```
-
-### 导航栏配置
-
-```js
-module.exports = {
-    themeConfig: {
-        nav: [
-            {text: '主页', link: '/'},
-            {text: '前端规范', link: '/frontEnd/'},
-            {text: '开发环境', link: '/development/'},
-            {text: '学习文档', link: '/notes/'},
-            // 下拉列表的配置
-            {
-                text: 'Languages',
-                items: [
-                    {text: 'Chinese', link: '/language/chinese'},
-                    {text: 'English', link: '/language/English'}
-                ]
-            }
-        ]
-    }
-}
-
-```
-
-
-
-### 侧边栏配置
-
-可以省略 .md 扩展名,同时以 / 结尾的路径将会被视为 */README.md
-
-```js
-module.exports = {
-  themeConfig: {
-    sidebar: {
-      '/frontEnd/': genSidebarConfig('前端开发规范'),
-    }
-  }
-}
-```
-
-上面封装的 genSidebarConfig 函数
-
-```js
-function genSidebarConfig(title) {
-  return [{
-    title,
-    collapsable: false,
-    children: [
-      '',
-      'html-standard',
-      'css-standard',
-      'js-standard',
-      'git-standard'
-    ]
-  }]
-}
-```
-
-支持侧边栏分组(可以用来做博客文章分类) collapsable是当前分组是否展开
-
-```js
-module.exports = {
-  themeConfig: {
-    sidebar: {
-      '/note': [
-        {
-          title:'前端',
-          collapsable: true,
-          children:[
-            '/notes/frontEnd/VueJS组件编码规范',
-            '/notes/frontEnd/vue-cli脚手架快速搭建项目',
-            '/notes/frontEnd/深入理解vue中的slot与slot-scope',
-            '/notes/frontEnd/webpack入门',
-            '/notes/frontEnd/PWA介绍及快速上手搭建一个PWA应用',
-          ]
-        },
-        {
-          title:'后端',
-          collapsable: true,
-          children:[
-            'notes/backEnd/nginx入门',
-            'notes/backEnd/CentOS如何挂载磁盘',
-          ]
-        },
-      ]
-    }
-  }
-}
-```
-
-
-
-
+官网说明的已经很详细，不妨直接看官网，走起：[默认主题设置](https://www.vuepress.cn/theme/default-theme-config.html)，如果后面针对于文档网站做个性化优化，会放在下面 "优化文档" 这一标题下说明。
 
 ## 部署
 
@@ -413,4 +292,144 @@ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
 ![image-20200426203837992](https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200426203839.png)
 
 ![image-20200426203823746](https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200426203824.png)
+
+## 优化文档
+
+### 图片放大显示
+
+1 安装插件
+
+```bash
+npm install -D @vuepress/plugin-medium-zoom
+```
+
+2 使用
+
+```bash
+module.exports = {
+  plugins: ['@vuepress/medium-zoom']
+}
+```
+
+3 效果图
+
+![](https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427075157.gif)
+
+### 配置 Google Analytics
+
+网站搭建好了，也有人访问了，那我们要怎么统计用户的访问情况呢？可以使用谷歌出品的 Google Analytics （GA）。
+
+Google Analytics （GA）是一个对用户活动进行追踪的工具，利用 GA 我们可以收集到博客当前有多少实时活跃用户，博客的总访问量，以及分析用户的一些访问行为，便于我们对博客网站做一些优化，而且它还是免费的！赶快用起来！
+
+1 下载 google-analytics 插件
+
+```bash
+yarn add -D @vuepress/plugin-google-analytics
+# OR npm install -D @vuepress/plugin-google-analytics
+```
+
+安装完在 config 配置文件里面配置一下 plugins
+
+```js
+module.exports = {
+  plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': '' // UA-00000000-0
+      }
+    ]
+  ]
+}
+```
+
+2 注册 GA，获取追踪 ID
+
+上面那个 ga ID从哪里获取呢？别着急，我们需要到 [Google Analytics](https://analytics.google.com/) 的官网上去注册一下我们的博客应用：
+
+![image-20200427080359014](https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427080400.png)
+
+创建账号：
+
+![image-20200427080425558](https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427080426.png)
+
+![image-20200427080511842](https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427080513.png)
+
+根据实际情况设置：
+
+![image-20200427080634915](https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427080635.png)
+
+然后就会获得追踪 ID，
+
+![image-20200427080744798](https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427080745.png)
+
+把获取到的跟踪ID 填到上面👆的`ga`这一项里面就好了。
+
+### 插件-PWA
+
+1 安装插件
+
+```bash
+yarn add -D @vuepress/plugin-pwa
+# OR npm install -D @vuepress/plugin-pwa
+```
+
+2 添加插件信息
+
+```js
+//config,js
+module.exports = {
+// ...
+ plugins: [
+    ['@vuepress/pwa', {
+        serviceWorker: true,
+        //指向自定义组件
+        popupComponent: 'MySWUpdatePopup',
+        updatePopup: {
+            message: "新的风暴已经出现",
+            buttonText: "盘他"
+        }
+    }]
+ ]
+}
+```
+
+serviceWorker 的作用大致就页面首次加载时会请求本地的serviceWorker.js 去比对各个文件的版本号
+如果不一致则提示用户拉取更新
+
+### 评论系统-Valine
+
+参考：[valine 官方安装教程](https://valine.js.org/vuepress.html)
+
+- 获取APP ID 和 APP Key,请先登录或注册 **LeanCloud**, 进入控制台后点击左下角创建应用
+- 安装并使用 **Valine**
+
+1 安装插件
+
+```bash
+npm install --save vuepress-plugin-comment
+```
+
+2 将 `vuepress-plugin-comment` 添加到vuepress项目的插件配置中：
+
+```js
+module.exports = {
+  plugins: [
+    [
+      'vuepress-plugin-comment',
+      {
+        choosen: 'valine', 
+        // options选项中的所有参数，会传给Valine的配置
+        options: {
+          el: '#valine-vuepress-comment',
+          appId: 'Your own appId',
+          appKey: 'Your own appKey'
+        }
+      }
+    ]
+  ]
+}
+```
+
+
 
