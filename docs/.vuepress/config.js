@@ -96,9 +96,8 @@ module.exports = {
         ]
       },
       {
-        text: '工具', link: '/tool/tools/',
+        text: '留言板', link: '/link/contact',
       },
-
       {
         text: '博客',
         items: [
@@ -109,12 +108,6 @@ module.exports = {
     ],
     sidebar: {
 
-      '/tool/tools/': [
-        {
-          title: '工具',
-          children: getFileNames('/tool/tools/')
-        }
-      ],
       '/guide/': [
         {
           title: 'VuePress 指南',
