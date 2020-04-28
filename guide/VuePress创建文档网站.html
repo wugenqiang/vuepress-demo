@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VuePress 创建文档网站 | VuePress Demo</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425141925.ico">
+    <meta name="description" content="基于 VuePress 实现的文档网站小 demo">
+    <link rel="preload" href="/vuepress-demo/assets/css/0.styles.b09ede54.css" as="style"><link rel="preload" href="/vuepress-demo/assets/js/app.5ad66b20.js" as="script"><link rel="preload" href="/vuepress-demo/assets/js/2.767dcaad.js" as="script"><link rel="preload" href="/vuepress-demo/assets/js/8.7f6f2b8c.js" as="script"><link rel="preload" href="/vuepress-demo/assets/js/4.ba974da7.js" as="script"><link rel="prefetch" href="/vuepress-demo/assets/js/10.9357ef77.js"><link rel="prefetch" href="/vuepress-demo/assets/js/11.1faa2fbe.js"><link rel="prefetch" href="/vuepress-demo/assets/js/12.7354bcf7.js"><link rel="prefetch" href="/vuepress-demo/assets/js/13.f2294f82.js"><link rel="prefetch" href="/vuepress-demo/assets/js/14.b3c95f31.js"><link rel="prefetch" href="/vuepress-demo/assets/js/3.382854fd.js"><link rel="prefetch" href="/vuepress-demo/assets/js/5.322cfaaa.js"><link rel="prefetch" href="/vuepress-demo/assets/js/6.4af30638.js"><link rel="prefetch" href="/vuepress-demo/assets/js/7.0acbb694.js"><link rel="prefetch" href="/vuepress-demo/assets/js/9.a791fcbd.js">
+    <link rel="stylesheet" href="/vuepress-demo/assets/css/0.styles.b09ede54.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress-demo/" class="home-link router-link-active"><!----> <span class="site-name">VuePress Demo</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-demo/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/vuepress-demo/guide/VuePress创建文档网站.html" class="nav-link">
+  指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="知识库" class="dropdown-title"><span class="title">知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://wugenqiang.github.io/CS-Notes/#/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  技术笔记
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://wugenqiang.github.io/algorithm-data-structure/#/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  算法笔记
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="/vuepress-demo/link/contact.html" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/wugenqiang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://wugenqiang.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/wugenqiang/vuepress-demo" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-demo/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/vuepress-demo/guide/VuePress创建文档网站.html" class="nav-link">
+  指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="知识库" class="dropdown-title"><span class="title">知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://wugenqiang.github.io/CS-Notes/#/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  技术笔记
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://wugenqiang.github.io/algorithm-data-structure/#/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  算法笔记
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="/vuepress-demo/link/contact.html" class="nav-link">
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="博客" class="dropdown-title"><span class="title">博客</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/wugenqiang" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://wugenqiang.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/wugenqiang/vuepress-demo" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>VuePress 指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress-demo/guide/VuePress创建文档网站.html" class="active sidebar-link">VuePress 创建文档网站</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#vuepress-介绍" class="sidebar-link">VuePress 介绍</a></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#安装" class="sidebar-link">安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#安装为本地依赖项" class="sidebar-link">安装为本地依赖项</a></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#初始化项目" class="sidebar-link">初始化项目</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#目录结构" class="sidebar-link">目录结构</a></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#基本配置" class="sidebar-link">基本配置</a></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#部署" class="sidebar-link">部署</a></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#github-actions-自动构建-部署" class="sidebar-link">GitHub Actions 自动构建/部署</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#写-workflow-脚本" class="sidebar-link">写 workflow 脚本</a></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#设置-workflow-的环境变量" class="sidebar-link">设置 workflow 的环境变量</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#优化文档" class="sidebar-link">优化文档</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#图片放大显示" class="sidebar-link">图片放大显示</a></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#配置-google-analytics" class="sidebar-link">配置 Google Analytics</a></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#插件-pwa" class="sidebar-link">插件-PWA</a></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#评论系统-valine" class="sidebar-link">评论系统-Valine</a></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#不蒜子访问量统计功能" class="sidebar-link">不蒜子访问量统计功能</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuepress-demo/guide/VuePress创建文档网站.html#集成-ui-组件" class="sidebar-link">集成 UI 组件</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vuepress-创建文档网站"><a href="#vuepress-创建文档网站" class="header-anchor">#</a> VuePress 创建文档网站</h1> <h2 id="vuepress-介绍"><a href="#vuepress-介绍" class="header-anchor">#</a> VuePress 介绍</h2> <p>简单介绍一下，<a href="https://vuepress.vuejs.org/zh/guide/" target="_blank" rel="noopener noreferrer">VuePress<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 是尤雨溪 2018 年 04 月 12 日发布的 Vue 静态网站生成器，支持 Vue 语法<code>，内置</code>webpack<code>，每一个由</code>VuePress<code>生成的页面都是通过 SSR</code> 预渲染的 HTML，也因此具有非常好的加载性能和搜索引擎优化。</p> <p>个人觉得最大的亮点就是：</p> <ol><li>markdown 文件可以内嵌 Vue 组件</li> <li>借助 YAML 来作为驱动和配置文档</li></ol> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <blockquote><p>在已有项目中安装</p></blockquote> <p>如果你想要在一个已有项目中维护文档，就应该将 VuePress 安装为本地依赖。此设置还允许你使用 CI 或 Netlify 服务，在推送时自动部署。</p> <h3 id="安装为本地依赖项"><a href="#安装为本地依赖项" class="header-anchor">#</a> 安装为本地依赖项</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 安装为本地依赖项</span>
+<span class="token function">npm</span> <span class="token function">install</span> -D vuepress
+</code></pre></div><h3 id="初始化项目"><a href="#初始化项目" class="header-anchor">#</a> 初始化项目</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 可以使用 npm 来初始化项目,会生成 package.json</span>
+<span class="token function">npm</span> init -y
+</code></pre></div><p>然后在项目的根目录下新建一个 <code>docs</code> 文件夹，以后我们写的 <code>markdown</code> 文件都会放在 <code>docs</code> 文件夹下。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 创建一个 docs 目录</span>
+<span class="token function">mkdir</span> docs
+<span class="token comment"># 创建一个 markdown 文件</span>
+<span class="token builtin class-name">echo</span> <span class="token comment"># Hello VuePress &gt; docs/README.md</span>
+</code></pre></div><p>执行本地服务器启动命令：</p> <div class="language-sh extra-class"><pre class="language-sh"><code>vuepress dev docs
+</code></pre></div><p>就可以看到启动了一个页面：</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200426193548.png" alt="image-20200426193547122"></p> <p>为了后续运行方便，我们可以把这些命令写在项目的 <code>package.json</code> 文件里面的 <code>scripts</code>：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress dev docs&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vuepress build docs&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;deploy&quot;</span><span class="token operator">:</span> <span class="token string">&quot;npm run build &amp;&amp; gh-pages -d docs/.vuepress/dist&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后你就可以开始编写文档了：</p> <p>执行本地服务器启动命令：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">yarn</span> dev <span class="token comment"># 或者：npm run dev</span>
+</code></pre></div><p>要生成静态资源（HTML 文件），请运行：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">yarn</span> build <span class="token comment"># 或者：npm run build</span>
+</code></pre></div><p>默认情况下，构建的文件会位于 <code>.vuepress/dist</code> 中，该文件可以通过 <code>.vuepress/config.js</code> 中的 <code>dest</code> 字段进行配置。构建的文件可以部署到任何静态文件服务器。</p> <h2 id="目录结构"><a href="#目录结构" class="header-anchor">#</a> 目录结构</h2> <p>VuePress 遵循 <strong>“约定优于配置”</strong> 的原则，推荐的目录结构如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">.</span>
+├── docs
+│   ├── .vuepress <span class="token punctuation">(</span>可选的<span class="token punctuation">)</span>
+│   │   ├── components <span class="token punctuation">(</span>可选的<span class="token punctuation">)</span>
+│   │   ├── theme <span class="token punctuation">(</span>可选的<span class="token punctuation">)</span>
+│   │   │   └── Layout.vue
+│   │   ├── public <span class="token punctuation">(</span>可选的<span class="token punctuation">)</span>
+│   │   ├── styles <span class="token punctuation">(</span>可选的<span class="token punctuation">)</span>
+│   │   │   ├── index.styl
+│   │   │   └── palette.styl
+│   │   ├── templates <span class="token punctuation">(</span>可选的, 谨慎配置<span class="token punctuation">)</span>
+│   │   │   ├── dev.html
+│   │   │   └── ssr.html
+│   │   ├── config.js <span class="token punctuation">(</span>可选的<span class="token punctuation">)</span>
+│   │   └── enhanceApp.js <span class="token punctuation">(</span>可选的<span class="token punctuation">)</span>
+│   │ 
+│   ├── README.md
+│   ├── guide
+│   │   └── README.md
+│   └── config.md
+│ 
+└── package.json
+</code></pre></div><ul><li><code>docs/.vuepress</code>: 用于存放全局的配置、组件、静态资源等。</li> <li><code>docs/.vuepress/components</code>: 该目录中的 Vue 组件将会被自动注册为全局组件。</li> <li><code>docs/.vuepress/theme</code>: 用于存放本地主题。</li> <li><code>docs/.vuepress/styles</code>: 用于存放样式相关的文件。</li> <li><code>docs/.vuepress/styles/index.styl</code>: 将会被自动应用的全局样式文件，会生成在最终的 CSS 文件结尾，具有比默认样式更高的优先级。</li> <li><code>docs/.vuepress/styles/palette.styl</code>: 用于重写默认颜色常量，或者设置新的 stylus 颜色常量。</li> <li><code>docs/.vuepress/public</code>: 静态资源目录。</li> <li><code>docs/.vuepress/templates</code>: 存储 HTML 模板文件。</li> <li><code>docs/.vuepress/templates/dev.html</code>: 用于开发环境的 HTML 模板文件。</li> <li><code>docs/.vuepress/templates/ssr.html</code>: 构建时基于 Vue SSR 的 HTML 模板文件。</li> <li><code>docs/.vuepress/config.js</code>: 配置文件的入口文件，也可以是 <code>YML</code> 或 <code>toml</code>。</li> <li><code>docs/.vuepress/enhanceApp.js</code>: 客户端应用的增强。</li></ul> <h2 id="基本配置"><a href="#基本配置" class="header-anchor">#</a> 基本配置</h2> <p>目前我们只写了一个 <code>markdown</code> 文档，所以只有一个页面，后续我们的博客会陆续加入很多内容，肯定需要做目录分级，配置导航栏，可以看<a href="https://vuepress.vuejs.org/zh/theme/default-theme-config.html#%E9%A6%96%E9%A1%B5" target="_blank" rel="noopener noreferrer">文档里的这部分<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>官网说明的已经很详细，不妨直接看官网，走起：<a href="https://www.vuepress.cn/theme/default-theme-config.html" target="_blank" rel="noopener noreferrer">默认主题设置<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，如果后面针对于文档网站做个性化优化，会放在下面 &quot;优化文档&quot; 这一标题下说明。</p> <h2 id="部署"><a href="#部署" class="header-anchor">#</a> 部署</h2> <p>下述的指南基于以下条件：</p> <ul><li>文档放置在项目的 <code>docs</code> 目录中；</li> <li>使用的是默认的构建输出位置；</li> <li>VuePress 以本地依赖的形式被安装到你的项目中，并且配置了如下的 npm scripts:</li></ul> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;deploy&quot;</span><span class="token operator">:</span> <span class="token string">&quot;npm run build &amp;&amp; gh-pages -d docs/.vuepress/dist&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol><li>在 <code>docs/.vuepress/config.js</code> 中设置正确的 <code>base</code>。</li></ol> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200426182802.png" alt="image-20200426182800772"></p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  base<span class="token operator">:</span> <span class="token string">'/vuepress-demo/'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ol start="2"><li>在你的项目中，创建一个如下的 <code>deploy.sh</code> 文件（根据实际情况修改）:</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token shebang important">#!/usr/bin/env sh</span>
+
+<span class="token comment"># 确保脚本抛出遇到的错误</span>
+<span class="token builtin class-name">set</span> -e
+
+<span class="token comment"># 生成静态文件</span>
+<span class="token function">npm</span> run build
+
+<span class="token comment"># 进入生成的文件夹</span>
+<span class="token builtin class-name">cd</span> docs/.vuepress/dist
+
+<span class="token comment"># 如果是发布到自定义域名</span>
+<span class="token comment"># echo 'www.example.com' &gt; CNAME</span>
+
+<span class="token function">git</span> init
+<span class="token function">git</span> <span class="token function">add</span> -A
+<span class="token function">git</span> commit -m <span class="token string">'deploy'</span>
+
+<span class="token comment"># 如果发布到 https://&lt;USERNAME&gt;.github.io</span>
+<span class="token comment"># git push -f git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git master</span>
+
+<span class="token comment"># 如果发布到 https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt;</span>
+<span class="token comment"># git push -f git@github.com:&lt;USERNAME&gt;/&lt;REPO&gt;.git master:gh-pages</span>
+
+<span class="token builtin class-name">cd</span> -
+</code></pre></div><h2 id="github-actions-自动构建-部署"><a href="#github-actions-自动构建-部署" class="header-anchor">#</a> GitHub Actions 自动构建/部署</h2> <p>大家有注意到 GitHub 悄悄上线了一个 Actions 功能吗？还不了解的同学可以看<a href="https://zhuanlan.zhihu.com/p/77751445" target="_blank" rel="noopener noreferrer">这篇文章<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，写的非常全面。</p> <blockquote><p>GitHub Actions 是什么</p> <p>GitHub 官方号称 Actions 可以让你的<strong>工作流自动化</strong>：GitHub 监听某个事件（可能是某个分支的提交），然后触发你预定义的工作流，让大家在GitHub服务器上直接测试代码、部署代码。所以，我们可以利用这里特性来做 CI/CD，开发者只要写一下 workflow 脚本就可以了，不用费心思去想要用哪个第三方的 CI/CD 服务, 💯。</p></blockquote> <p>actions 其实就是由一些脚本组成，所以它们是可以复用的，GitHub 做了一个<a href="https://github.com/marketplace?type=actions" target="_blank" rel="noopener noreferrer">官方市场<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，可以搜索到他人提交的 actions。另外，还有一个 <a href="https://github.com/sdras/awesome-actions" target="_blank" rel="noopener noreferrer">awesome actions<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 的仓库，也可以找到不少 action。这样一来，你甚至都不用自己写具体的脚本，直接引用别人的脚本就行啦。</p> <p>话不多说，赶紧用起来！</p> <h3 id="写-workflow-脚本"><a href="#写-workflow-脚本" class="header-anchor">#</a> 写 workflow 脚本</h3> <p>首先我们需要到项目仓库的页面上进入 Actions 这个 tab, 选择 Node 环境进入脚本的编辑页面</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200426201146.png" alt="image-20200426201144851"></p> <p>这里我直接使用了 peaceiris 的 <a href="https://github.com/peaceiris/actions-gh-pages" target="_blank" rel="noopener noreferrer"><code>actions-gh-pages</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，这个 <code>action</code> 可以帮你把打包好的静态文件部署到 <code>GitHub Pages</code> 上去。</p> <p>最终我的 workflow 脚本如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node</span>
+<span class="token comment"># For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions</span>
+
+name: vuepress-demo
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
+
+    <span class="token comment"># - name: Setup Node</span>
+    <span class="token comment">#   uses: actions/setup-node@v1</span>
+    <span class="token comment">#   with:</span>
+    <span class="token comment">#     node-version: '10.x'</span>
+
+    <span class="token comment"># - name: Cache dependencies</span>
+    <span class="token comment">#   uses: actions/cache@v1</span>
+    <span class="token comment">#   with:</span>
+    <span class="token comment">#     path: ~/.npm</span>
+    <span class="token comment">#     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}</span>
+    <span class="token comment">#     restore-keys: |</span>
+    <span class="token comment">#       ${{ runner.os }}-node-</span>
+
+    - run: <span class="token function">npm</span> ci
+
+    - run: <span class="token function">npm</span> run build
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      env:
+        ACTIONS_DEPLOY_KEY: <span class="token variable">${{ secrets.ACCESS_TOKEN }</span><span class="token punctuation">}</span>
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: docs/.vuepress/dist
+</code></pre></div><p>注意</p> <p>因为我用的 action 是第三方的，所以 action 可能会经常更改，如果你是过了一段时间才看到这篇文章，peaceiris 的 <a href="https://github.com/peaceiris/actions-gh-pages" target="_blank" rel="noopener noreferrer"><code>actions-gh-pages</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 很可能已经发生了更新，所以脚本的内容建议直接参照它的官方文档来写。</p> <p>更详细的语法可以去看 <a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows" target="_blank" rel="noopener noreferrer">GitHub Actions 的官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>注意</p> <h3 id="设置-workflow-的环境变量"><a href="#设置-workflow-的环境变量" class="header-anchor">#</a> 设置 workflow 的环境变量</h3> <p>因为我们需要 GitHub Actions 把构建成果发到 GitHub 仓库，因此需要 GitHub 密钥，相当于是给 GitHub actions 授权。</p> <p>首先运行下面的命令生成一对密钥：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>ssh-keygen -t rsa -b <span class="token number">4096</span> -C <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> config user.email<span class="token variable">)</span></span>&quot;</span> -f gh-pages -N <span class="token string">&quot;&quot;</span>
+<span class="token comment"># You will get 2 files:</span>
+<span class="token comment">#   gh-pages.pub (public key)</span>
+<span class="token comment">#   gh-pages     (private key)</span>
+</code></pre></div><p>像这样：</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200426202935.png" alt="image-20200426202933017"></p> <p>密钥在这：</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200426203944.png" alt="image-20200426203943738"></p> <p>然后：</p> <ol><li>在博客项目的仓库的 Settings 栏下，找到 <code>Deploy keys</code>这一项，把你的公钥加进去，<strong>注意勾选<code>Allow write access</code></strong></li> <li>同样在博客项目的仓库的 Settings 栏下，找到 <code>Secrets</code>这一项，把你的私钥加进去</li></ol> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200426203454.png" alt="image-20200426203453041"></p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200426203755.png" alt="image-20200426203753813"></p> <p>如图显示即成功：</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200426203839.png" alt="image-20200426203837992"></p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200426203824.png" alt="image-20200426203823746"></p> <h2 id="优化文档"><a href="#优化文档" class="header-anchor">#</a> 优化文档</h2> <h3 id="图片放大显示"><a href="#图片放大显示" class="header-anchor">#</a> 图片放大显示</h3> <p>1 安装插件</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> -D @vuepress/plugin-medium-zoom
+</code></pre></div><p>2 使用</p> <div class="language-bash extra-class"><pre class="language-bash"><code>module.exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  plugins: <span class="token punctuation">[</span><span class="token string">'@vuepress/medium-zoom'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>3 效果图</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427075157.gif" alt=""></p> <h3 id="配置-google-analytics"><a href="#配置-google-analytics" class="header-anchor">#</a> 配置 Google Analytics</h3> <p>网站搭建好了，也有人访问了，那我们要怎么统计用户的访问情况呢？可以使用谷歌出品的 Google Analytics （GA）。</p> <p>Google Analytics （GA）是一个对用户活动进行追踪的工具，利用 GA 我们可以收集到博客当前有多少实时活跃用户，博客的总访问量，以及分析用户的一些访问行为，便于我们对博客网站做一些优化，而且它还是免费的！赶快用起来！</p> <p>1 下载 google-analytics 插件</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> -D @vuepress/plugin-google-analytics
+<span class="token comment"># OR npm install -D @vuepress/plugin-google-analytics</span>
+</code></pre></div><p>安装完在 config 配置文件里面配置一下 plugins</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span>
+      <span class="token string">'@vuepress/google-analytics'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">'ga'</span><span class="token operator">:</span> <span class="token string">''</span> <span class="token comment">// UA-00000000-0</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>2 注册 GA，获取追踪 ID</p> <p>上面那个 ga ID从哪里获取呢？别着急，我们需要到 <a href="https://analytics.google.com/" target="_blank" rel="noopener noreferrer">Google Analytics<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 的官网上去注册一下我们的博客应用：</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427080400.png" alt="image-20200427080359014"></p> <p>创建账号：</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427080426.png" alt="image-20200427080425558"></p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427080513.png" alt="image-20200427080511842"></p> <p>根据实际情况设置：</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427080635.png" alt="image-20200427080634915"></p> <p>然后就会获得追踪 ID，</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427080745.png" alt="image-20200427080744798"></p> <p>把获取到的跟踪ID 填到上面👆的<code>ga</code>这一项里面就好了。</p> <h3 id="插件-pwa"><a href="#插件-pwa" class="header-anchor">#</a> 插件-PWA</h3> <p>1 安装插件</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> -D @vuepress/plugin-pwa
+<span class="token comment"># OR npm install -D @vuepress/plugin-pwa</span>
+</code></pre></div><p>2 添加插件信息</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//config,js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token comment">// ...</span>
+ plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">'@vuepress/pwa'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        serviceWorker<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token comment">//指向自定义组件</span>
+        popupComponent<span class="token operator">:</span> <span class="token string">'MySWUpdatePopup'</span><span class="token punctuation">,</span>
+        updatePopup<span class="token operator">:</span> <span class="token punctuation">{</span>
+            message<span class="token operator">:</span> <span class="token string">&quot;新的风暴已经出现&quot;</span><span class="token punctuation">,</span>
+            buttonText<span class="token operator">:</span> <span class="token string">&quot;盘他&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span>
+ <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>serviceWorker 的作用大致就页面首次加载时会请求本地的serviceWorker.js 去比对各个文件的版本号
+如果不一致则提示用户拉取更新</p> <h3 id="评论系统-valine"><a href="#评论系统-valine" class="header-anchor">#</a> 评论系统-Valine</h3> <h4 id="方案一：valine-官方插件"><a href="#方案一：valine-官方插件" class="header-anchor">#</a> 方案一：valine 官方插件</h4> <p>参考：<a href="https://valine.js.org/vuepress.html" target="_blank" rel="noopener noreferrer">valine 官方安装教程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ul><li>获取APP ID 和 APP Key,请先登录或注册 <strong>LeanCloud</strong>, 进入控制台后点击左下角创建应用</li> <li>安装并使用 <strong>Valine</strong></li></ul> <p>1 安装插件</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> --save vuepress-plugin-comment
+</code></pre></div><p>2 将 <code>vuepress-plugin-comment</code> 添加到vuepress项目的插件配置中：</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span>
+      <span class="token string">'vuepress-plugin-comment'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        choosen<span class="token operator">:</span> <span class="token string">'valine'</span><span class="token punctuation">,</span> 
+        <span class="token comment">// options选项中的所有参数，会传给Valine的配置</span>
+        options<span class="token operator">:</span> <span class="token punctuation">{</span>
+          el<span class="token operator">:</span> <span class="token string">'#valine-vuepress-comment'</span><span class="token punctuation">,</span>
+          appId<span class="token operator">:</span> <span class="token string">'Your own appId'</span><span class="token punctuation">,</span>
+          appKey<span class="token operator">:</span> <span class="token string">'Your own appKey'</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>3 效果</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427133744.png" alt="image-20200427133728810"></p> <p>4 修改样式</p> <p>创建 .vuepress/styles/palette.styl</p> <p>写入：</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">#valine-vuepress-comment .veditor</span> <span class="token punctuation">{</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> 10rem<span class="token punctuation">;</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425091751.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+  <span class="token property">background-size</span><span class="token punctuation">:</span> contain<span class="token punctuation">;</span>
+  <span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span>
+  <span class="token property">background-position</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">resize</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.vat</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #49B1F5 <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.vpower.txt-right</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token selector">#valine-vuepress-comment</span> <span class="token punctuation">{</span>
+  max-width 740px
+  padding 10px
+  display block<span class="token punctuation">;</span>
+  margin-left auto<span class="token punctuation">;</span>
+  margin-right auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>config.js 中写入：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+palette<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'palette.styl'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment">//样式修改</span>
+</code></pre></div><p>5 效果图</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200428090123.png" alt="image-20200428090051466"></p> <blockquote><p>建议使用方案一，方案二需要进行优化，因为 Valine 部分是被当作内容处理的，但是如果你非要使用方案二，可以把解决方案和我分享喔！</p></blockquote> <h4 id="方案二：配合插件手写全局组件"><a href="#方案二：配合插件手写全局组件" class="header-anchor">#</a> 方案二：配合插件手写全局组件</h4> <p>1 安装 Valine</p> <div class="language-bash extra-class"><pre class="language-bash"><code>//Install leancloud's js-sdk
+<span class="token function">npm</span> <span class="token function">install</span> leancloud-storage --save
+
+//Install valine
+<span class="token function">npm</span> <span class="token function">install</span> valine --save
+</code></pre></div><p>2 注册 vuepress 全局组件</p> <p>创建 .vuepress/components/Valine.vue</p> <p>(在components下注册的 vue 可供全局使用，文件名为组件名）</p> <div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vcomments<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'Valine'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">mounted</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">// require window</span>
+            <span class="token keyword">const</span> Valine <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'valine'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> window <span class="token operator">!==</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>window <span class="token operator">=</span> window
+                window<span class="token punctuation">.</span><span class="token constant">AV</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'leancloud-storage'</span><span class="token punctuation">)</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">new</span> <span class="token class-name">Valine</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                el<span class="token operator">:</span> <span class="token string">'#vcomments'</span> <span class="token punctuation">,</span>
+                appId<span class="token operator">:</span> <span class="token string">&quot;KIlqXsCmzBUnovnvh5ih8mk9-gzGzoHsz&quot;</span><span class="token punctuation">,</span>
+                appKey<span class="token operator">:</span> <span class="token string">&quot;e0v6zIg2NGg44PM6MVLa7voo&quot;</span><span class="token punctuation">,</span>
+                notify<span class="token operator">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
+                verify<span class="token operator">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
+                avatar<span class="token operator">:</span> <span class="token string">'monsterid'</span><span class="token punctuation">,</span>
+                placeholder<span class="token operator">:</span> <span class="token string">&quot;你是我一生只会遇见一次的惊喜 ...&quot;</span><span class="token punctuation">,</span>
+                path<span class="token operator">:</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>pathname<span class="token punctuation">,</span><span class="token comment">//配置path地址，否则评论混乱</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">#vcomments</span><span class="token punctuation">{</span>
+        <span class="token property">margin-top</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>3 使用 Valine</p> <p>只需要在 markdown 中调用即可</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;Valine&gt;&lt;/Valine&gt;
+</code></pre></div><p>4 效果</p> <p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427134950.png" alt="image-20200427134948583"></p> <p>也不错，只是评论被当作内容处理了……</p> <h3 id="不蒜子访问量统计功能"><a href="#不蒜子访问量统计功能" class="header-anchor">#</a> 不蒜子访问量统计功能</h3> <p>1 安装插件</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> busuanzi.pure.js
+<span class="token comment"># or</span>
+<span class="token function">npm</span> <span class="token function">install</span> busuanzi.pure.js --save
+</code></pre></div><blockquote><p>还未实现，待完善</p></blockquote> <h2 id="集成-ui-组件"><a href="#集成-ui-组件" class="header-anchor">#</a> 集成 UI 组件</h2> <p>vuepress 支持扩展，支持引入第三方组件，在 .vuepress/ 下创建 enhanceApp.js 文件，这里展示的是引入 vue 生态圈比较知名的ui库 <a href="https://element.eleme.cn/#/zh-CN" target="_blank" rel="noopener noreferrer">Element<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>, 来自于饿了么。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * 扩展 VuePress 应用
+ */</span>
+<span class="token keyword">import</span> Element <span class="token keyword">from</span> <span class="token string">'element-ui'</span>
+<span class="token keyword">import</span> <span class="token string">'element-ui/lib/theme-chalk/index.css'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>
+  Vue<span class="token punctuation">,</span> 
+<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...做一些其他的应用级别的优化</span>
+  Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Element<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>当然，在这之前，需要先安装 element。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">yarn</span> <span class="token function">add</span> element-ui
+<span class="token comment"># or </span>
+<span class="token function">npm</span> <span class="token function">install</span> element-ui --save
+</code></pre></div><p>在扩展之后，就可以在自定义的组件或者 md 文件中，使用 element 的组件了。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wugenqiang/vuepress-demo/edit/master/docs/guide/VuePress创建文档网站.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/28/2020, 9:07:12 AM</span></div></footer> <!----> </main></div><div class="global-ui"><!----><!----><div></div></div></div>
+    <script src="/vuepress-demo/assets/js/app.5ad66b20.js" defer></script><script src="/vuepress-demo/assets/js/2.767dcaad.js" defer></script><script src="/vuepress-demo/assets/js/8.7f6f2b8c.js" defer></script><script src="/vuepress-demo/assets/js/4.ba974da7.js" defer></script>
+  </body>
+</html>
