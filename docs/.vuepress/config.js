@@ -111,6 +111,7 @@ module.exports = {
       '/guide/': [
         {
           title: 'VuePress 指南',
+          collapsable: false, //是否展开
           children: getFileNames('/guide/')
         }
       ]

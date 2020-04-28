@@ -21,6 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "busuanzi.pure.js": "^1.0.3",
+    "element-ui": "^2.13.1",
     "vuepress-plugin-comment": "^0.7.3"
   }
 }
