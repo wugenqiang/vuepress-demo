@@ -399,6 +399,8 @@ serviceWorker 的作用大致就页面首次加载时会请求本地的serviceWo
 
 ### 评论系统-Valine
 
+#### 方案一：valine 官方插件
+
 参考：[valine 官方安装教程](https://valine.js.org/vuepress.html)
 
 - 获取APP ID 和 APP Key,请先登录或注册 **LeanCloud**, 进入控制台后点击左下角创建应用
@@ -431,5 +433,174 @@ module.exports = {
 }
 ```
 
+3 效果
 
+![image-20200427133728810](https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427133744.png)
+
+4 修改样式
+
+创建 .vuepress/styles/palette.styl
+
+写入：
+
+```css
+#valine-vuepress-comment .veditor {
+  min-height: 10rem;
+  background-image: url(https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425091751.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: rgba(255,255,255,0);
+  resize: none;
+}
+
+.vat {
+  color: #49B1F5 !important;
+  font-size: 14px !important;
+}
+.vpower.txt-right {
+  display: none;
+}
+
+
+#valine-vuepress-comment {
+  max-width 740px
+  padding 10px
+  display block;
+  margin-left auto;
+  margin-right auto;
+}
+```
+
+config.js 中写入：
+
+```js
+const path = require('path')
+palette: path.resolve(__dirname, 'palette.styl'),//样式修改
+```
+
+
+
+5 效果图
+
+![image-20200428090051466](https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200428090123.png)
+
+> 建议使用方案一，方案二需要进行优化，因为 Valine 部分是被当作内容处理的，但是如果你非要使用方案二，可以把解决方案和我分享喔！
+
+#### 方案二：配合插件手写全局组件
+
+1 安装 Valine
+
+```bash
+//Install leancloud's js-sdk
+npm install leancloud-storage --save
+
+//Install valine
+npm install valine --save
+```
+
+2 注册 vuepress 全局组件
+
+创建 .vuepress/components/Valine.vue
+
+(在components下注册的 vue 可供全局使用，文件名为组件名）
+
+```vue
+<template>
+    <div>
+        <div id="vcomments"></div>
+    </div>
+
+</template>
+
+<script>
+    export default {
+        name: 'Valine',
+        mounted: function(){
+            // require window
+            const Valine = require('valine');
+            if (typeof window !== 'undefined') {
+                this.window = window
+                window.AV = require('leancloud-storage')
+
+            }
+
+            new Valine({
+                el: '#vcomments' ,
+                appId: "KIlqXsCmzBUnovnvh5ih8mk9-gzGzoHsz",
+                appKey: "e0v6zIg2NGg44PM6MVLa7voo",
+                notify:false,
+                verify:false,
+                avatar: 'monsterid',
+                placeholder: "你是我一生只会遇见一次的惊喜 ...",
+                path:window.location.pathname,//配置path地址，否则评论混乱
+            });
+        },
+    }
+</script>
+<style>
+    #vcomments{
+        margin-top:100px;
+    }
+</style>
+```
+
+3 使用 Valine
+
+只需要在 markdown 中调用即可
+
+```
+<Valine></Valine>
+```
+
+
+
+4 效果
+
+![image-20200427134948583](https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200427134950.png)
+
+也不错，只是评论被当作内容处理了……
+
+### 不蒜子访问量统计功能
+
+1 安装插件
+
+```bash
+yarn add busuanzi.pure.js
+# or
+npm install busuanzi.pure.js --save
+```
+
+
+
+> 还未实现，待完善
+
+## 集成 UI 组件
+
+vuepress 支持扩展，支持引入第三方组件，在 .vuepress/ 下创建 enhanceApp.js 文件，这里展示的是引入 vue 生态圈比较知名的ui库 [Element](https://element.eleme.cn/#/zh-CN), 来自于饿了么。
+
+```js
+/**
+ * 扩展 VuePress 应用
+ */
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+export default ({
+  Vue, 
+}) => {
+  // ...做一些其他的应用级别的优化
+  Vue.use(Element)
+}
+```
+
+当然，在这之前，需要先安装 element。
+
+```bash
+yarn add element-ui
+# or 
+npm install element-ui --save
+```
+
+在扩展之后，就可以在自定义的组件或者 md 文件中，使用 element 的组件了。
 
